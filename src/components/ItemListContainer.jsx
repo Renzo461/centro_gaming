@@ -1,6 +1,8 @@
-const ItemListContainer = () => {
+const ItemListContainer = ({ nombre }) => {
   return (
-    <div>ItemListContainer</div>
+    <div>
+      <p>Bienvenido a la pagina Centro Gaming {nombre}</p>
+    </div>
   )
 }
 export default ItemListContainer
