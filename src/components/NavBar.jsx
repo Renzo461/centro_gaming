@@ -1,5 +1,5 @@
 import CartWidget from "./CartWidget"
-const NavBar = ({children}) => {
+const NavBar = () => {
     return (
         <div className="navbar bg-purple-700 text-slate-50">
             <div className="navbar-start">
