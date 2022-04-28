@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/centro_gaming/static/css/main.53cf7486.css",
-    "main.js": "/centro_gaming/static/js/main.e7d392b0.js",
+    "main.css": "/centro_gaming/static/css/main.9b6446f8.css",
+    "main.js": "/centro_gaming/static/js/main.78816337.js",
     "static/js/787.d3a883b5.chunk.js": "/centro_gaming/static/js/787.d3a883b5.chunk.js",
-    "static/media/logo.svg": "/centro_gaming/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/battlefield2042.jpg": "/centro_gaming/static/media/battlefield2042.778eb268f90efaa881cb.jpg",
+    "static/media/ageOfEmpiresiv.jpg": "/centro_gaming/static/media/ageOfEmpiresiv.f81f744a30bb7b190a46.jpg",
     "index.html": "/centro_gaming/index.html",
-    "main.53cf7486.css.map": "/centro_gaming/static/css/main.53cf7486.css.map",
-    "main.e7d392b0.js.map": "/centro_gaming/static/js/main.e7d392b0.js.map",
+    "main.9b6446f8.css.map": "/centro_gaming/static/css/main.9b6446f8.css.map",
+    "main.78816337.js.map": "/centro_gaming/static/js/main.78816337.js.map",
     "787.d3a883b5.chunk.js.map": "/centro_gaming/static/js/787.d3a883b5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.53cf7486.css",
-    "static/js/main.e7d392b0.js"
+    "static/css/main.9b6446f8.css",
+    "static/js/main.78816337.js"
   ]
 }
