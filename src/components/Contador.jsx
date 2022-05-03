@@ -15,9 +15,7 @@ const Contador = ({ stock, initial }) => {
   }
   return (
     <div className="flex justify-center">
-      <div className="border-2 border-sky-500 mt-5 p-3 w-fit">
-        <h1>CONTADOR</h1>
-        <div className="mb-3">Stock: {stock} Inicial: {initial}</div>
+      <div className="border-2 border-slate-500 mt-5 p-3 w-fit rounded-md">
         <button className="btn btn-primary" onClick={resHandler}>-</button>
         <strong className="mx-3"> {count} </strong>
         <button className="btn btn-primary" onClick={addHandler}>+</button>
