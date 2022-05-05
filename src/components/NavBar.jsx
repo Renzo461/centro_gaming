@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import CartWidget from "./CartWidget"
 const NavBar = () => {
     return (
@@ -14,9 +15,8 @@ const NavBar = () => {
                                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                             </a>
                             <ul className="bg-purple-700">
-                                <li className="hover:bg-emerald-700"><a href="../../public/index.html">Steam</a></li>
-                                <li className="hover:bg-emerald-700"><a href="../../public/index.html">Epic</a></li>
-                                <li className="hover:bg-emerald-700"><a href="../../public/index.html">Steam</a></li>
+                                <li className="hover:bg-emerald-700"><Link to={'/category/Steam'}>Steam</Link></li>
+                                <li className="hover:bg-emerald-700"><Link to={'/category/Epic'}>Epic</Link></li>
                                 <li className="hover:bg-emerald-700"><a href="../../public/index.html">Ubysoft</a></li>
                                 <li className="hover:bg-emerald-700"><a href="../../public/index.html">Origin</a></li>
                             </ul>
@@ -44,19 +44,18 @@ const NavBar = () => {
                         </li>
                     </ul>
                 </div>
-                <a href="../../public/index.html" className="btn btn-ghost normal-case text-xl hover:bg-emerald-700">CentroGaming</a>
+                <Link to={'/'} className="btn btn-ghost normal-case text-xl hover:bg-emerald-700">CentroGaming</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul tabIndex="0" className="menu menu-horizontal p-0">
                     <li tabIndex="0">
-                        <a href="../../public/index.html" className="justify-between justify-between hover:bg-emerald-700">
+                        <a href="" className="justify-between justify-between hover:bg-emerald-700">
                             PC
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
                         </a>
                         <ul className="bg-purple-700">
-                            <li className="hover:bg-emerald-700"><a href="../../public/index.html">Steam</a></li>
-                            <li className="hover:bg-emerald-700"><a href="../../public/index.html">Epic</a></li>
-                            <li className="hover:bg-emerald-700"><a href="../../public/index.html">Steam</a></li>
+                            <li className="hover:bg-emerald-700"><Link to={'/category/Steam'}>Steam</Link></li>
+                            <li className="hover:bg-emerald-700"><Link to={'/category/Epic'}>Epic</Link></li>
                             <li className="hover:bg-emerald-700"><a href="../../public/index.html">Ubysoft</a></li>
                             <li className="hover:bg-emerald-700"><a href="../../public/index.html">Origin</a></li>
                         </ul>
@@ -85,7 +84,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <CartWidget/>
+                <CartWidget />
                 <div className="dropdown dropdown-end">
                     <label tabIndex="0" className="btn btn-ghost btn-circle avatar hover:bg-emerald-700 focus:bg-emerald-700">
                         <div className="w-10 rounded-full">

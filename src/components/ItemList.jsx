@@ -1,30 +1,34 @@
 import { useEffect, useState } from "react"
 import Item from "./Item"
-import juego1 from "./img/ageOfEmpiresiv.jpg"
-import juego2 from "./img/battlefield2042.jpg"
+import imagenes from "./img/bd"
+import { useParams } from "react-router-dom"
 
-const ItemList = () => {
-    const item = [
-        { id: "1", nombre: "Age Of Empire 4", precio: "40$", imagen: juego1 },
-        { id: "2", nombre: "JUEGO 2", precio: "40$", imagen: juego2 },
-    ]
+const ItemList = ({category}) => {    
     const [juego, setJuego] = useState([])
     useEffect(() => {
         const promesa = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(item)
-            }, 2000)
+            resolve(imagenes)
         })
         promesa
             .then(result => {
-                setJuego(result)
+                if (category == undefined) {
+                    setJuego(result)
+                }
+                else {
+                    if(category=="Steam"){
+                        setJuego(result.filter(j => j.plataforma == category))
+                    }                    
+                    if(category=="Epic"){
+                        setJuego(result.filter(j => j.plataforma == category))
+                    }
+                }
             })
     })
 
     return (
-        <div className="flex flex-wrap">
-            {juego.map(j => 
-                <Item key={j.id} nombre={j.nombre} precio={j.precio} imagen={j.imagen}/>
+        <div className="flex flex-wrap justify-center">
+            {juego.map(j =>
+                <Item key={j.id} id={j.id} nombre={j.nombre} precio={j.precio} imagen={j.imagen} />
             )}
         </div>
     )
