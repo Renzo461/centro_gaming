@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import bd from "./img/bd"
+import bd from "./data/bd"
 import ItemDetail from "./ItemDetail"
 const ItemDetailContainer = () => {
     const { gameId } = useParams()
@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
     })
 
     return (
-        <div className="w-4/6 mx-auto">ItemDetailContainer
+        <div className="bg-white flex-1">
             <ItemDetail key={juego.id} juego={juego} />
         </div>
     )

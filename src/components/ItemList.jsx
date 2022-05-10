@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import Item from "./Item"
-import imagenes from "./img/bd"
-import { useParams } from "react-router-dom"
+import imagenes from "./data/bd"
 
 const ItemList = ({category}) => {    
     const [juego, setJuego] = useState([])
@@ -23,10 +22,10 @@ const ItemList = ({category}) => {
                     }
                 }
             })
-    })
+    },[category])
 
     return (
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center pt-2">
             {juego.map(j =>
                 <Item key={j.id} id={j.id} nombre={j.nombre} precio={j.precio} imagen={j.imagen} />
             )}

@@ -4,7 +4,7 @@ import ItemList from "./ItemList"
 const ItemListContainer = () => {
   const { category } = useParams()
   return (
-    <div>      
+    <div className="bg-white flex-1">      
       <ItemList category={category}/>
     </div>
   )

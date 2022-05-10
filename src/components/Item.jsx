@@ -2,16 +2,19 @@ import { Link } from "react-router-dom"
 
 const Item = ({ id, nombre, precio, imagen }) => {
     return (
-        <div key={id} className="w-1/5 p-2 text-center text-slate-100">
-            <div className="bg-stone-900 border rounded-md border-cyan-100 p-2">
-                <img src={imagen} alt={nombre}></img>
-                <div>
-                    <h2>{nombre}</h2>
+        <div className="w-1/6 p-2 text-center text-black">
+            <div>
+                <div className="duration-500 hover:scale-105 rounded-md shadow-md shadow-zinc-700">
+                    <Link to={`/juego/${id}`} key={id} className=" relative">
+                        <img className="rounded-md" src={imagen} alt={nombre}></img>
+                        <div className="absolute px-2 py-1 rounded-bl-md bottom-0 bg-black">
+                            <p className="text-white font-medium text-lg">{precio}</p>
+                        </div>
+                    </Link>
                 </div>
-                <div>
-                    <p>{precio}</p>
+                <div className="mt-1">
+                    <h2 className="overflow-hidden whitespace-nowrap uppercase text-ellipsis font-semibold text-lg">{nombre}</h2>
                 </div>
-                <Link to={`/juego/${id}`} className="btn btn-accent mt-2">DETALLES</Link>
             </div >
         </div>
     )
