@@ -1,8 +1,13 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import { useAppContext } from "./context/AppContext"
+import { useCartContext } from "./context/CartContext"
 
-const Contador = ({ stock, initial, onAdd }) => {
-  const [count, setCount] = useState(initial)
+const Contador = ({ stock, onAdd, terminar,id }) => {
+  const [count, setCount] = useState(1)
+
+  const {addToCart}=useCartContext()
+  const {products}=useAppContext()
 
   const addHandler = () => {
     if (stock > count) {
@@ -14,15 +19,32 @@ const Contador = ({ stock, initial, onAdd }) => {
       setCount(count - 1)
     }
   }
+  
+  const handleClick = (id,cantidad)=>{
+    const findProduct = products.find((producto)=>producto.id==id)
+    if(!findProduct){
+      alert("Error en la base de datos")
+      return
+    }
+    addToCart(findProduct,cantidad)
+    onAdd(count)
+  }
+
   return (
     <div className="flex flex-col w-fit rounded-md text-center">
       <h3 className="text-xl">STOCK <span className="text-base">({stock} Disponibles)</span></h3>
-      <div className="flex justify-center mt-2">
-        <button className="bg-blue-600 font-bold w-7 h-7 rounded-sm" onClick={resHandler}>-</button>
-        <div className="font-bold mx-3"> {count} </div>
-        <button className="bg-red-600 font-bold w-7 h-7 rounded-sm" onClick={addHandler}>+</button>        
-      </div>
-      <Link to={'/cart'}><button className="border-black border-2 font-bold rounded-md mt-2 bg-sky-300 px-5 py-1 uppercase" onClick={()=>{onAdd(count)}}>Añadir al carrito</button></Link>
+
+      {terminar ?
+        <Link to={'/cart'}><button className="border-black border-2 font-bold rounded-md mt-2 bg-sky-300 px-5 py-1 uppercase">Terminar Compra</button></Link> :
+        <div>
+          <div className="flex justify-center mt-2">
+            <button className="bg-blue-600 font-bold w-7 h-7 rounded-sm" onClick={resHandler}>-</button>
+            <div className="font-bold mx-3"> {count} </div>
+            <button className="bg-red-600 font-bold w-7 h-7 rounded-sm" onClick={addHandler}>+</button>
+          </div>
+          <button className="border-black border-2 font-bold rounded-md mt-2 bg-sky-300 px-5 py-1 uppercase" onClick={() => handleClick(id,count)}>Añadir al carrito</button>
+        </div>
+      }
     </div>
   )
 }

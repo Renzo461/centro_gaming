@@ -2,10 +2,10 @@ import { useState } from "react"
 import Contador from "./Contador"
 
 const ItemDetail = ({ juego }) => {
-    const [cantidad, setCantidad] = useState("")
-    const onAdd=(c)=>{        
-        setCantidad(c)
-        console.log(cantidad)
+    const [terminar, setTerminar] = useState(false)
+    const onAdd = (c) => {
+        setTerminar(true)
+        console.log(c)
     }
     return (
         <div className="flex bg-zinc-100 rounded-lg m-5 p-5 text-black shadow-md shadow-zinc-700">
@@ -25,11 +25,7 @@ const ItemDetail = ({ juego }) => {
                         <p className="text-left font-mediumw-3/6 text-slate-600">{juego.editor}</p>
                     </div>
                     <div className="flex items-center flex-col mt-5">
-                        <div className="flex font-bold">
-                            <h2 className="text-left font-semibold text-slate-700">PRECIO:</h2>
-                            <p className="">{juego.precio}</p>
-                        </div>
-                        <Contador stock={juego.stock} initial={1} onAdd={onAdd}/>                        
+                        <Contador stock={juego.stock} id={juego.id} onAdd={onAdd} terminar={terminar} />
                     </div>
                 </div>
             </div>
