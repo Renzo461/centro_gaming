@@ -13,7 +13,7 @@ const Item = ({ id, nombre, precio, imagen }) => {
                     </Link>
                 </div>
                 <div className="mt-1">
-                    <h2 className="overflow-hidden whitespace-nowrap uppercase text-ellipsis font-semibold text-lg">{nombre}</h2>
+                    <h2 className="overflow-hidden whitespace-nowrap uppercase text-ellipsis text-zinc-700 font-semibold text-lg">{nombre}</h2>
                 </div>
             </div >
         </div>
