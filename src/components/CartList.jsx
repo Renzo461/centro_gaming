@@ -4,7 +4,7 @@ import { useCartContext } from "./context/CartContext"
 import vacio from "./img/esta-vacio.jpg"
 
 const CartList = () => {
-    const { cart, deleteFromCart } = useCartContext()
+    const { cart } = useCartContext()
     console.log(cart)
     return (
         <div className="bg-white flex-1 pt-5">
@@ -21,6 +21,9 @@ const CartList = () => {
                     {cart.map(c =>
                         <Cart key={c.id} juego={c} />
                     )}
+                    <div className="m-auto cart p-5 border-b-2 text-right text-xl text-black">
+                        <p>MONTO TOTAL: {cart.reduce((acumulador,cart)=>acumulador+(cart.quantity*cart.precio),0)}$</p>
+                    </div>
                 </div>
             }
         </div>
