@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCartContext } from "./context/CartContext";
 
 const CartWidget = () => {
@@ -18,7 +19,7 @@ const CartWidget = () => {
             <div tabIndex="0" className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
                 <div className="card-body">
                     <div className="card-actions">
-                        <button className="btn btn-primary btn-block">Ver Carro</button>
+                        <Link to={'/cart'} className="w-full"><button className="btn btn-primary btn-block">Ver Carro</button></Link>
                     </div>
                 </div>
             </div>
