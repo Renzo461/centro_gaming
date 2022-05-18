@@ -1,28 +1,25 @@
 import { useEffect, useState } from "react"
 import Item from "./Item"
 import imagenes from "./data/bd"
+import { useAppContext } from "./context/AppContext"
 
-const ItemList = ({category}) => {    
+const ItemList = ({ category }) => {
+
+    const { products } = useAppContext()
     const [juego, setJuego] = useState([])
     useEffect(() => {
-        const promesa = new Promise((resolve, reject) => {
-            resolve(imagenes)
-        })
-        promesa
-            .then(result => {
-                if (category == undefined) {
-                    setJuego(result)
-                }
-                else {
-                    if(category=="Steam"){
-                        setJuego(result.filter(j => j.plataforma == category))
-                    }                    
-                    if(category=="Epic"){
-                        setJuego(result.filter(j => j.plataforma == category))
-                    }
-                }
-            })
-    },[category])
+        if (category == undefined) {
+            setJuego(products)
+        }
+        else {
+            if (category == "Steam") {
+                setJuego(products.filter(j => j.plataforma == category))
+            }
+            if (category == "Epic") {
+                setJuego(products.filter(j => j.plataforma == category))
+            }
+        }
+    })
 
     return (
         <div className="flex flex-wrap justify-center pt-2">

@@ -3,7 +3,16 @@ import * as ReactDOMClient from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { initializeApp } from "firebase/app";
+const firebaseConfig = {
+  apiKey: "AIzaSyDB_F0j6oG1fkRUBeGDPJyehstARfRnwyo",
+  authDomain: "centro-gaming.firebaseapp.com",
+  projectId: "centro-gaming",
+  storageBucket: "centro-gaming.appspot.com",
+  messagingSenderId: "948191887501",
+  appId: "1:948191887501:web:51d8b6278b6db62c7762c4"
+};
+const app = initializeApp(firebaseConfig);
 const container = document.getElementById('root');
 const root= ReactDOMClient.createRoot(container);
 root.render(
