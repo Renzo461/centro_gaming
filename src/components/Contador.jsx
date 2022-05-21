@@ -35,7 +35,7 @@ const Contador = ({ stock, onAdd, terminar,id }) => {
       <h3 className="text-xl">STOCK <span className="text-base">({stock} Disponibles)</span></h3>
 
       {terminar ?
-        <Link to={'/cart'}><button className="border-black border-2 font-bold rounded-md mt-2 bg-sky-300 px-5 py-1 uppercase">Terminar Compra</button></Link> 
+        <Link to={'/cart'}><button className="font-bold rounded-md mt-2 bg-blue-400 hover:bg-cyan-400 px-5 py-1 uppercase">Terminar Compra</button></Link> 
         :
         <div>
           <div className="flex justify-center mt-2">
@@ -43,7 +43,7 @@ const Contador = ({ stock, onAdd, terminar,id }) => {
             <div className="font-bold mx-3"> {count} </div>
             <button className="bg-red-600 font-bold w-7 h-7 rounded-sm" onClick={addHandler}>+</button>
           </div>
-          <button className="border-black border-2 font-bold rounded-md mt-2 bg-sky-300 px-5 py-1 uppercase" onClick={() => handleClick(id,count)}>Añadir al carrito</button>
+          <button className="font-bold rounded-md mt-2 bg-blue-400 hover:bg-cyan-400 px-5 py-1 uppercase" onClick={() => handleClick(id,count)}>Añadir al carrito</button>
         </div>
       }
     </div>

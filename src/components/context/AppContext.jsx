@@ -15,7 +15,6 @@ const AppContextProvider = ({ children }) => {
         getDocs(juegosBD)
             .then((result) => setProducts(result.docs.map((doc) => ({ id: doc.id, ...doc.data() }))))
     }, [])
-    console.log(products)
     return <AppContext.Provider value={{ products }}>{children}</AppContext.Provider>
 }
 export default AppContextProvider

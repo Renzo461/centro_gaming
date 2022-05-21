@@ -3,9 +3,8 @@ import Contador from "./Contador"
 
 const ItemDetail = ({ juego }) => {
     const [terminar, setTerminar] = useState(false)
-    const onAdd = (c) => {
+    const onAdd = () => {
         setTerminar(true)
-        console.log(c)
     }
     return (
         <div className="flex bg-zinc-100 rounded-lg m-5 p-5 text-black shadow-md shadow-zinc-700">

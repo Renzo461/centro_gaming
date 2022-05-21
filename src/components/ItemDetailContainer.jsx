@@ -8,14 +8,16 @@ const ItemDetailContainer = () => {
     const { gameId } = useParams()
     const [juego, setJuego] = useState([])
     useEffect(() => {
+        //FORMA 1
         const db = getFirestore();
         const juegosBD = doc(db, "juegos", gameId)
         getDoc(juegosBD).then((result) => {
             setJuego(({ id: result.id, ...result.data() }))
         })
+        
+        // FORMA 2
         // setJuego(products.find((j)=>j.id==gameId))
     }, [])
-    console.log(products)
     return (
         <div className="bg-white flex-1">
             <ItemDetail key={juego.id} juego={juego} />

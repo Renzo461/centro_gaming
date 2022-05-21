@@ -1,7 +1,7 @@
 import CartWidget from "./CartWidget"
 import logo from "./img/lobo.png"
 import menu from "./img/menu.svg"
-import {TiThMenu} from "react-icons/ti"
+import { TiThMenu } from "react-icons/ti"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
         <header className="flex justify-between items-center bg-zinc-900 h-14 lg:h-16 px-5 py-1 text-zinc-100">
             <div className="flex justify-between h-full items-center">
                 <div className="h-full lg:hidden mr-2">
-                    <TiThMenu className="h-full" size={35} onClick={()=>setmostrarMenu(!mostrarMenu)}/>
+                    <TiThMenu className="h-full" size={35} onClick={() => setmostrarMenu(!mostrarMenu)} />
                     <div className={mostrarMenu ? "absolute" : "absolute hidden"}>
                         <nav className="bg-zinc-900 rounded-md">
                             <ul>
@@ -21,16 +21,16 @@ const Header = () => {
                                 <li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900"><a href="">Origin</a></li>
                             </ul>
                         </nav>
-                    </div>                    
+                    </div>
                 </div>
-                <a href="" className="flex justify-between items-center h-full">
+                <Link to={'/'} className="flex justify-between items-center h-full">
                     <div className="h-full">
                         <img className="max-w-full max-h-full" src={logo} alt="LOBO" />
                     </div>
                     <div>
                         <h1 className="font-bold text-xl lg:text-2xl">CENTRO GAMING</h1>
                     </div>
-                </a>
+                </Link>
             </div>
             <div className="hidden lg:inline">
                 <nav>
