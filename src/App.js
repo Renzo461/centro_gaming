@@ -6,6 +6,7 @@ import Header from './components/Header';
 import CartContextProvider from './components/context/CartContext';
 import AppContextProvider from './components/context/AppContext';
 import CartList from './components/CartList';
+import Pago from './components/Pago';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/category/:category' element={<ItemListContainer />} />
             <Route path='/juego/:gameId' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<CartList />} />
+            <Route path='/cart/pago' element={<Pago/>}/>
           </Routes>
         </BrowserRouter>
       </CartContextProvider>

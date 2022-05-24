@@ -21,11 +21,11 @@ const CartWidget = () => {
                 <div className="card-body text-center">
                     {
                         c==1?
-                        <span class="font-bold text-lg">{c} Juego</span> 
+                        <span className="font-bold text-lg">{c} Juego</span> 
                         :
-                        <span class="font-bold text-lg">{c} Juegos</span>
+                        <span className="font-bold text-lg">{c} Juegos</span>
                     }                    
-                    <span class="text-info">Total: {mT}$</span>
+                    <span className="text-info">Total: {mT}$</span>
                     <div className="card-actions">
                         <Link to={'/cart'} className="w-full"><button className="btn btn-primary btn-block">Ver Carro</button></Link>
                     </div>
