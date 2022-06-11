@@ -9,11 +9,11 @@ const CartContextProvider = ({ children }) => {
     const [mT, setMT] = useState(0)
     const actualizarCantidad = cart.reduce((acc, cart) => acc + cart.quantity, 0)
     const actualizarTotal = cart.reduce((acc, cart) => acc + (cart.quantity * cart.precio), 0)
-    const isInCart = (id) => cart.find(prod => prod.id == id)
+    const isInCart = (id) => cart.find(prod => prod.id == id)    
     const addToCart = (producto, cantidad) => {
         const newCart = [...cart]
         const productoEnCart = isInCart(producto.id)
-        if (productoEnCart) {
+        if (productoEnCart) {            
             newCart[newCart.findIndex(prod => prod.id == productoEnCart.id)].quantity += cantidad
             setCart(newCart)
             setC(c + cantidad)

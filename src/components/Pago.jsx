@@ -3,7 +3,6 @@ import Cart from "./Cart"
 import { useCartContext } from "./context/CartContext"
 import { doc, collection, getDocs, getFirestore, setDoc } from "firebase/firestore"
 import { Link, Navigate, useNavigate } from "react-router-dom"
-
 const Pago = () => {
     const { deleteCart, cart, c, mT } = useCartContext()
     const [idVenta, setIdVenta] = useState(0)

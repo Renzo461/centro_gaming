@@ -1,11 +1,22 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Contador from "./Contador"
+import { useCartContext } from "./context/CartContext"
 
 const ItemDetail = ({ juego }) => {
+    const { cart } = useCartContext()
     const [terminar, setTerminar] = useState(false)
+    const [s, setS] = useState(0)
     const onAdd = () => {
         setTerminar(true)
     }
+    useEffect(() => {
+        const prod = cart.find((producto) => producto.id == juego.id)
+        if (prod) {            
+            setS(juego.stock - prod.quantity)
+            return
+        }
+        setS(juego.stock)
+    }, [])
     return (
         <div className="flex bg-zinc-100 rounded-lg m-5 p-5 text-black shadow-md shadow-zinc-700">
             <div className="w-2/5 px-10">
@@ -24,7 +35,7 @@ const ItemDetail = ({ juego }) => {
                         <p className="text-left font-mediumw-3/6 text-slate-600">{juego.editor}</p>
                     </div>
                     <div className="flex items-center flex-col mt-5">
-                        <Contador stock={juego.stock} id={juego.id} onAdd={onAdd} terminar={terminar} />
+                        <Contador stock={s} id={juego.id} onAdd={onAdd} terminar={terminar} />
                     </div>
                 </div>
             </div>
