@@ -40,7 +40,10 @@ const Contador = ({ stock, onAdd, terminar, id }) => {
           :
           <>
             {terminar ?
-              <Link to={'/'}><button className="font-bold rounded-md mt-2 bg-blue-400 hover:bg-cyan-400 px-5 py-1 uppercase">Terminar Compra</button></Link>
+              <>
+                <Link to={'/'}><button className="font-bold rounded-md mt-2 bg-blue-400 hover:bg-cyan-400 px-5 py-1 uppercase">Ver Catálogo</button></Link>
+                <Link to={'/cart'}><button className="font-bold rounded-md mt-2 bg-blue-400 hover:bg-cyan-400 px-5 py-1 uppercase">Terminar Compra</button></Link>
+              </>
               :
               <div>
                 <div className="flex justify-center mt-2">

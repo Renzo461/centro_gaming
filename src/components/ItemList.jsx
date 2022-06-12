@@ -12,12 +12,7 @@ const ItemList = ({ category }) => {
             setJuego(products)
         }
         else {
-            if (category == "Steam") {
-                setJuego(products.filter(j => j.plataforma == category))
-            }
-            if (category == "Epic") {
-                setJuego(products.filter(j => j.plataforma == category))
-            }
+            setJuego(products.filter(j => j.plataforma == category))
         }
     })
 

@@ -3,6 +3,8 @@ import Cart from "./Cart"
 import { useCartContext } from "./context/CartContext"
 import { doc, collection, getDocs, getFirestore, setDoc } from "firebase/firestore"
 import { Link, Navigate, useNavigate } from "react-router-dom"
+import Swal from 'sweetalert2'
+import { wait } from "@testing-library/user-event/dist/utils"
 const Pago = () => {
     const { deleteCart, cart, c, mT } = useCartContext()
     const [idVenta, setIdVenta] = useState(0)
@@ -19,11 +21,10 @@ const Pago = () => {
                 setIdVenta("V1")
                 :
                 setIdVenta("V" + (r.docs.length + 1))
-        })        
+        })
     }, [])
 
-    const pagar = async () => {
-        
+    const pagar = async () => {        
         if (nom == '' || ape == '' || tel == '' || cor == '') {
             alert("RELLENO TODOS LOS CAMPOS")
             return
@@ -32,16 +33,24 @@ const Pago = () => {
             comprador: { nombre: nom, apellido: ape, telefono: tel, email: cor },
             items: cart,
             total: mT,
-        }        
+        }
         const db = getFirestore();
         await setDoc(doc(db, "orders", idVenta), o)
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Venta Registrada',
+            text: 'Id Venta: '+idVenta,
+            showConfirmButton: false,
+            timer: 3000
+        })        
         deleteCart()
         navigate("/")
     }
     return (
         <div className="bg-white flex-1 pt-5 flex justify-center">
             <div className="flex w-3/4">
-                <div className="w-1/2">
+                <div className="w-1/3">
                     <form className="text-black">
                         <h2 className="text-2xl font-semibold">Dirección de facturación</h2>
                         <div className="flex flex-wrap mt-2">
@@ -65,7 +74,7 @@ const Pago = () => {
                         </div>
                     </form>
                 </div>
-                <div className="w-1/2">
+                <div className="w-2/3">
                     {cart.map((c) => <Cart key={c.id} juego={c} eliminar={false} />)}
                     <div className="text-xl text-black">
                         <div className="bg-slate-100 px-10 py-2 mb-1">

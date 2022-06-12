@@ -12,13 +12,13 @@ const Header = () => {
                 <div className="h-full lg:hidden mr-2">
                     <TiThMenu className="h-full" size={35} onClick={() => setmostrarMenu(!mostrarMenu)} />
                     <div className={mostrarMenu ? "absolute" : "absolute hidden"}>
-                        <nav className="bg-zinc-900 rounded-md">
+                        <nav className="bg-zinc-900 rounded-md relative z-50">
                             <ul>
-                                <li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900"><a href="">Inicio</a></li>
-                                <li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900"><a href="">Epic</a></li>
-                                <li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900"><a href="">Steam</a></li>
-                                <li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900"><a href="">Ubisoft</a></li>
-                                <li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900"><a href="">Origin</a></li>
+                                <Link to={'/'} onClick={() => setmostrarMenu(!mostrarMenu)} ><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Inicio</li></Link>
+                                <Link to={'/category/Epic'} onClick={() => setmostrarMenu(!mostrarMenu)} ><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Epic</li></Link>
+                                <Link to={'/category/Steam'} onClick={() => setmostrarMenu(!mostrarMenu)} ><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Steam</li></Link>
+                                <Link to={'/category/Ubysoft'} onClick={() => setmostrarMenu(!mostrarMenu)} ><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Ubysoft</li></Link>
+                                <Link to={'/category/Origin'} onClick={() => setmostrarMenu(!mostrarMenu)} ><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Origin</li></Link>
                             </ul>
                         </nav>
                     </div>
@@ -38,7 +38,7 @@ const Header = () => {
                         <Link to={'/'}><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Inicio</li></Link>
                         <Link to={'/category/Epic'}><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Epic</li></Link>
                         <Link to={'/category/Steam'}><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Steam</li></Link>
-                        <Link to={'/category/Ubisoft'}><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Ubisoft</li></Link>
+                        <Link to={'/category/Ubysoft'}><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Ubysoft</li></Link>
                         <Link to={'/category/Origin'}><li className="py-2 px-5 rounded-md transition duration-300 hover:bg-blue-400 hover:text-zinc-900">Origin</li></Link>
                     </ul>
                 </nav>
